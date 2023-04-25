@@ -51,7 +51,7 @@ uploaded_file = st.sidebar.file_uploader("Upload a photo of mole.", type=['png',
 if uploaded_file is not None:
     u_img = Image.open(uploaded_file)
     show.image(u_img, 'Uploaded Image', use_column_width=True)
-    else:
+else:
     # For newline
     st.sidebar.write('\n')
 
