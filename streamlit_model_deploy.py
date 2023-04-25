@@ -81,4 +81,4 @@ if uploaded_file is not None:
             else:
                 st.sidebar.write("종양의 종류: 악성", '\n')
                 st.sidebar.write('**Probability: **', acc, '%')
-                st.sidebar.write("악성 종양은 위험한 종양이며, 반드시 치료가 필요하니 의사와 상의하시기 바랍니다.")
+                st.sidebar.write("악성 종양은 매우 위험한 종양이며, ", "\n", "반드시 치료가 필요하니 의사와 상의하시기 바랍니다.")
