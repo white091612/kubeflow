@@ -2,12 +2,13 @@
 
 import streamlit as st
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import load_img
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
 import numpy as np
 from PIL import Image
-from tensorflow.keras.preprocessing.image import img_to_array
 import time
 import lion_tf2
+
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
