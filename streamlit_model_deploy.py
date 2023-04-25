@@ -24,11 +24,13 @@ def streamlit_load_model():
 
 def predict_class(image_path, model):
     # test some picture here
+    imgs=[]
     img = load_img(image_path, target_size=(150, 150))
     img = img_to_array(img)
     img = img.astype(np.float32) / 255
-    # this is for general testing
-    predictions = model.predict(img)
+    imgs.append(img)
+    imgs = np.stack(imgs, axis=0)
+    predictions = model.predict(imgs)
     pred = np.argmax(predictions, axis=1)
     class_names_long = ['Actinic keratoses', 'Basal cell carcinoma', 'Benign keratosis-like lesions', 'Dermatofibroma',
                         'Melanocytic nevi', 'Melanoma', 'Vascular lesion']
