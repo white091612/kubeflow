@@ -44,7 +44,7 @@ st.title("Skin Doctor")
 # For newline
 st.write('\n')
 
-image = Image.open('images/image.png')
+image = Image.open('front_image.jpg')
 show = st.image(image, use_column_width=True)
 
 st.sidebar.title("Upload Image")
