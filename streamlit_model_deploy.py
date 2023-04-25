@@ -12,7 +12,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
 @st.cache(allow_output_mutation=True)
-def load_model():
+def streamlit_load_model():
     model = load_model('./HAM10000_Xception_dropout015_lion.h5')
     return model
 
@@ -34,7 +34,7 @@ def predict_class(image_path, model):
 
 
 # Designing the interface
-model = load_model()
+model = streamlit_load_model()
 st.title("Skin Doctor")
 # For newline
 st.write('\n')
