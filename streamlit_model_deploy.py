@@ -7,13 +7,17 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras.preprocessing.image import img_to_array
 import time
+import lion_tf2
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
 @st.cache(allow_output_mutation=True)
 def streamlit_load_model():
-    model = load_model('./HAM10000_Xception_dropout015_lion.h5')
+    model = load_model('./HAM10000_Xception_dropout015_lion.h5', compile=False)
+    model.compile(optimizer=lion_tf2.Lion(learning_rate=0.00005),
+                  loss=SparseCategoricalCrossentropy(),
+                  metrics=['accuracy'])
     return model
 
 
