@@ -65,7 +65,7 @@ if uploaded_file is not None:
             st.sidebar.write("Please upload an Image to Classify")
         else:
             with st.spinner('Classifying ...'):
-                acc, result = predict_class(uploaded_file)
+                acc, result = predict_class(uploaded_file, model)
                 time.sleep(2)
                 st.success('Done!')
             st.sidebar.header("Algorithm Predicts: ")
